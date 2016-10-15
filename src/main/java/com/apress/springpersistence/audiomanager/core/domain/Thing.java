@@ -11,20 +11,25 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Thing extends AbstractPersistable<Long> {
     
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private URL url;
     private URL additionalType;
     private String alternateName;
+    
     @Column(length = 255)
     private String description;
+    
     @org.hibernate.validator.constraints.URL
     private URL image;
+    
     @Column(length = 255)
     private String name;
     //    private Action potentialAction;
     private URL sameAs;
+    
     @Version
     private Integer version;
     
